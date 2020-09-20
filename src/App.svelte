@@ -1,46 +1,68 @@
 <script>
-  import { Router, Link, Route } from 'svelte-routing';
+  import { Router, Route, navigate } from 'svelte-routing'
+  import IconButton from '@smui/icon-button'
 
-  import HomePage from './home/views/HomePage.svelte';
-  import DiagnosisPage from './diagnosis/views/DiagnosisPage.svelte';
-  import IssuePage from './issues/views/IssuePage.svelte';
-  import IssuesListPage from './issues/views/IssuesListPage.svelte';
+  import HomePage from './home/views/HomePage.svelte'
+  import DiagnosisPage from './diagnosis/views/DiagnosisPage.svelte'
+  import IssuePage from './issues/views/IssuePage.svelte'
+  import Footer from './common/components/Footer.svelte'
 
-  let active = 'Home';
-  export let url = '';
+  const active = 'Home'
+  export let url = ''
+  const navigateToHome = () => {
+    navigate('/', { replace: true })
+  }
 </script>
 
 <style>
-  nav {
-    height: 80px;
-    padding-left: 30px;
-    padding-right: 30px;
-    width: 100%;
+  .container {
+    min-height: 100vh;
+    min-width: 100vw;
     display: flex;
-    align-items: center;
-    span {
-      margin-right: 15px;
-    }
+    justify-content: center;
+    padding-top: 15px;
+    margin: auto;
+    position: relative;
   }
 
+  .container::after {
+    content: '';
+    background-image: url('/background.jpg');
+    opacity: 0.5;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(5px);
+  }
+
+  .home-button {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+  }
+  .page-container {
+    max-width: 1400px;
+  }
 </style>
 
-<Router {url}>
-  <nav>
-    <span>
-      <Link to="/">Home</Link>
-    </span>
-    <span>
-      <Link to="/issues">Issues</Link>
-    </span>
-    <span>
-      <Link to="/diagnosis">Get Diagnosis</Link>
-    </span>
-  </nav>
-  <div>
-    <Route path="issues/:id" component={IssuePage} />
-    <Route path="issues" component={IssuesListPage} />
-    <Route path="diagnosis" component={DiagnosisPage} />
-    <Route path="/" component={HomePage} />
+<div class="container">
+  <div class="home-button">
+    <IconButton class="material-icons" on:click={navigateToHome}>
+      home
+    </IconButton>
   </div>
-</Router>
+  <div class="page-container">
+    <Router {url}>
+      <Route path="issues/:id" component={IssuePage} />
+      <Route path="diagnosis" component={DiagnosisPage} />
+      <Route path="/" component={HomePage} />
+    </Router>
+  </div>
+  <Footer />
+</div>
