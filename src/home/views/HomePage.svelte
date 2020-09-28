@@ -1,6 +1,11 @@
 <script>
   import Button, { Label } from '@smui/button'
+  import { navigate } from 'svelte-routing'
   import './HomePage.scss'
+
+  const goToDiagnosis = () => {
+    navigate('/diagnosis', { replace: true })
+  }
 </script>
 
 <style>
@@ -29,10 +34,10 @@
   Created using <a href="https://svelte.dev/" target="_blank">Svelte</a> framework.
 </div>
 <div class="mdc-typography--body1 description">
-  App is using test API by <a href="https://infermedica.com/" target="_blank">Infermedica</a>
+  App is using test API by <a href="https://apimedic.com/" target="_blank">ApiMedic</a>
 </div>
 <div class="button-container">
-  <Button class="button" variant="raised">
+  <Button class="button" variant="raised" on:click={goToDiagnosis}>
     <Label>Get Diagnosis!</Label>
   </Button>
 </div>

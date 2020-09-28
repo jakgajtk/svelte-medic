@@ -1,5 +1,7 @@
 <script>
-  const name = 'world'
+  // import { issues } from "../store/stores"
+  const rara = 'Dada'
+  console.log("XDDD")
 </script>
 
-<h1>Hello to diagnosis component!</h1>
+<h1>Hello to wewqew component!</h1>

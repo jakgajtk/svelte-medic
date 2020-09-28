@@ -4,8 +4,12 @@ import commonjs from 'rollup-plugin-commonjs'
 import postcss from 'rollup-plugin-postcss'
 import livereload from 'rollup-plugin-livereload'
 import { terser } from 'rollup-plugin-terser'
+import replace from '@rollup/plugin-replace'
+import dotenv from 'dotenv'
 
 const production = !process.env.ROLLUP_WATCH
+
+dotenv.config()
 
 function serve() {
   let server
@@ -41,6 +45,14 @@ module.exports = {
     file: 'public/build/bundle.js',
   },
   plugins: [
+    serve({
+      contentBase: 'public',
+      historyApiFallback: '/index.html'
+    }),
+    replace({
+      API_USERNAME: JSON.stringify(process.env.API_USERNAME),
+      API_PASSWORD: JSON.stringify(process.env.API_PASSWORD),
+    }),
     svelte({
       emitCss: true,
     }),

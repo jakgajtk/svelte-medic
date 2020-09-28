@@ -9,7 +9,7 @@
 
   const active = 'Home'
   export let url = ''
-  const navigateToHome = () => {
+  const goToHome = () => {
     navigate('/', { replace: true })
   }
 </script>
@@ -53,14 +53,12 @@
 
 <div class="container">
   <div class="home-button">
-    <IconButton class="material-icons" on:click={navigateToHome}>
-      home
-    </IconButton>
+    <IconButton class="material-icons" on:click={goToHome}>home</IconButton>
   </div>
   <div class="page-container">
     <Router {url}>
-      <Route path="issues/:id" component={IssuePage} />
-      <Route path="diagnosis" component={DiagnosisPage} />
+      <Route path="/issues/:id" component={IssuePage} />
+      <Route path="/diagnosis" component={DiagnosisPage} />
       <Route path="/" component={HomePage} />
     </Router>
   </div>
