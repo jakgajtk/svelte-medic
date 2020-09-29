@@ -45,13 +45,11 @@ module.exports = {
     file: 'public/build/bundle.js',
   },
   plugins: [
-    serve({
-      contentBase: 'public',
-      historyApiFallback: '/index.html'
-    }),
     replace({
       API_USERNAME: JSON.stringify(process.env.API_USERNAME),
       API_PASSWORD: JSON.stringify(process.env.API_PASSWORD),
+      API_URL: JSON.stringify(process.env.API_URL),
+      API_AUTH_URL: JSON.stringify(process.env.API_AUTH_URL),
     }),
     svelte({
       emitCss: true,

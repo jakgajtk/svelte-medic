@@ -16,6 +16,12 @@
       "processor": "svelte3/svelte3"
     }
   ],
+  "globals": {
+    "API_USERNAME": "readonly",
+    "API_PASSWORD": "readonly",
+    "API_AUTH_URL": "readonly",
+    "API_URL": "readonly"
+  },
   "rules": {
     "indent": [2, "tab", { "SwitchCase": 1 }],
     "semi": [2, "always"],

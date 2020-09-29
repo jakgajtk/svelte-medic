@@ -1,16 +1,16 @@
 <script>
-  import IconButton from '@smui/icon-button'
-  import { LINKEDIN_URL, GITHUB_URL } from '../constants'
+  import IconButton from '@smui/icon-button';
+  import { LINKEDIN_URL, GITHUB_URL } from '../constants';
 
   const goToLinkedin = () => {
-    const w = window.open(LINKEDIN_URL, '_blank')
-    w.opener = null
-  }
+  	const w = window.open(LINKEDIN_URL, '_blank');
+  	w.opener = null;
+  };
 
   const goToGithub = () => {
-    const w = window.open(GITHUB_URL, '_blank')
-    w.opener = null
-  }
+  	const w = window.open(GITHUB_URL, '_blank');
+  	w.opener = null;
+  };
 </script>
 
 <style>
