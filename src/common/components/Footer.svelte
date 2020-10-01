@@ -34,9 +34,11 @@
     margin-right: 15px;
   }
   .linkedin {
+    background-color: white;
     background-image: url('https://content.linkedin.com/content/dam/me/business/en-us/amp/brand-site/v2/bg/LI-Bug.svg.original.svg');
   }
   .github {
+    background-color: white;
     background-image: url('https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png');
   }
 </style>

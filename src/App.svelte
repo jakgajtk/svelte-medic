@@ -6,9 +6,7 @@
   import DiagnosisPage from './diagnosis/views/DiagnosisPage.svelte';
   import IssuePage from './issues/views/IssuePage.svelte';
   import Footer from './common/components/Footer.svelte';
-  import { authorize } from './auth/endpoints';
-
-  authorize();
+  import { authToken } from './auth/store/store';
 
   export let url = '';
   const goToHome = () => {
@@ -30,7 +28,7 @@
   .container::after {
     content: '';
     background-image: url('/background.jpg');
-    opacity: 0.5;
+    opacity: 0.4;
     top: 0;
     left: 0;
     bottom: 0;

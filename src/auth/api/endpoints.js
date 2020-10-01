@@ -8,7 +8,6 @@ export const authorize = async () => {
 		method: "POST",
 		headers: {
 			Authorization: `Bearer ${API_USERNAME}:${computedHashString}`,
-			Host: "authservice.priaid.ch"
 		},
 	});
 	return response.json();
