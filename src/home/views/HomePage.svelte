@@ -1,11 +1,11 @@
 <script>
-  import Button, { Label } from '@smui/button';
-  import { navigate } from 'svelte-routing';
-  import './HomePage.scss';
+  import Button, { Label } from '@smui/button'
+  import { navigate } from 'svelte-routing'
+  import './HomePage.scss'
 
   const goToDiagnosis = () => {
-  	navigate('/diagnosis', { replace: true });
-  };
+    navigate('/diagnosis', { replace: true })
+  }
 </script>
 
 <style>
@@ -23,6 +23,9 @@
   }
 </style>
 
+<svelte:head>
+  <title>Svelte Medic app</title>
+</svelte:head>
 <div class="mdc-typography--headline3 headline">
   Welcome to Svelte Medic app!
 </div>

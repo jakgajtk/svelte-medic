@@ -1,17 +1,16 @@
 <script>
-  import { Router, Route, navigate } from 'svelte-routing';
-  import IconButton from '@smui/icon-button';
+  import { Router, Route, navigate } from 'svelte-routing'
+  import IconButton from '@smui/icon-button'
 
-  import HomePage from './home/views/HomePage.svelte';
-  import DiagnosisPage from './diagnosis/views/DiagnosisPage.svelte';
-  import IssuePage from './issues/views/IssuePage.svelte';
-  import Footer from './common/components/Footer.svelte';
-  import { authToken } from './auth/store/store';
+  import HomePage from './home/views/HomePage.svelte'
+  import DiagnosisPage from './diagnosis/views/DiagnosisPage.svelte'
+  import IssuePage from './issues/views/IssuePage.svelte'
+  import Footer from './common/components/Footer.svelte'
 
-  export let url = '';
+  export let url = ''
   const goToHome = () => {
-  	navigate('/', { replace: true });
-  };
+    navigate('/', { replace: true })
+  }
 </script>
 
 <style>

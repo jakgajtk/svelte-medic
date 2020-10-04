@@ -1,16 +1,5 @@
 <script>
-  import IconButton from '@smui/icon-button';
-  import { LINKEDIN_URL, GITHUB_URL } from '../constants';
-
-  const goToLinkedin = () => {
-  	const w = window.open(LINKEDIN_URL, '_blank');
-  	w.opener = null;
-  };
-
-  const goToGithub = () => {
-  	const w = window.open(GITHUB_URL, '_blank');
-  	w.opener = null;
-  };
+  import { LINKEDIN_URL, GITHUB_URL } from '../constants'
 </script>
 
 <style>
@@ -24,6 +13,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #ededed;
   }
   a {
     height: 30px;
@@ -45,8 +35,13 @@
 
 <div class="container">
   <a
-    href="https://www.linkedin.com/in/jakub-gajtkowski-37031077/"
+    href={LINKEDIN_URL}
     target="_blank"
-    class="linkedin" />
-  <a href="https://github.com/jakgajtk" target="_blank" class="github" />
+    class="linkedin"
+    rel="noopener noreferrer" />
+  <a
+    href={GITHUB_URL}
+    target="_blank"
+    class="github"
+    rel="noopener noreferrer" />
 </div>
