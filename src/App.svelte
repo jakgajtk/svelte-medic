@@ -1,16 +1,18 @@
 <script>
-  import { Router, Route, navigate } from 'svelte-routing'
-  import IconButton from '@smui/icon-button'
+  import { Router, Route, navigate } from "svelte-routing";
+  import IconButton from "@smui/icon-button";
 
-  import HomePage from './home/views/HomePage.svelte'
-  import DiagnosisPage from './diagnosis/views/DiagnosisPage.svelte'
-  import IssuePage from './issues/views/IssuePage.svelte'
-  import Footer from './common/components/Footer.svelte'
+  import HomePage from "./home/views/HomePage.svelte";
+  import DiagnosisPage from "./diagnosis/views/DiagnosisPage.svelte";
+  import IssuePage from "./issues/views/IssuePage.svelte";
+  import Footer from "./common/components/Footer.svelte";
+  import Loader from "./common/components/Loader.svelte";
+  import { authToken } from "./auth/store/store";
 
-  export let url = ''
+  export let url = "";
   const goToHome = () => {
-    navigate('/', { replace: true })
-  }
+    navigate("/", { replace: true });
+  };
 </script>
 
 <style>
@@ -48,6 +50,12 @@
   .page-container {
     max-width: 1400px;
   }
+  .loader {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
+  }
 </style>
 
 <div class="container">
@@ -55,11 +63,17 @@
     <IconButton class="material-icons" on:click={goToHome}>home</IconButton>
   </div>
   <div class="page-container">
-    <Router {url}>
-      <Route path="/issues/:id" component={IssuePage} />
-      <Route path="/diagnosis" component={DiagnosisPage} />
-      <Route path="/" component={HomePage} />
-    </Router>
+    {#if $authToken}
+      <Router {url}>
+        <Route path="/issues/:id" component={IssuePage} />
+        <Route path="/diagnosis" component={DiagnosisPage} />
+        <Route path="/" component={HomePage} />
+      </Router>
+      {:else}
+      <div class="loader">
+        <Loader />
+      </div>
+    {/if}
   </div>
   <Footer />
 </div>

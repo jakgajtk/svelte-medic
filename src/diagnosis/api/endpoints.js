@@ -9,10 +9,10 @@ export const getSymptoms = async ({ authToken }) => {
 }
 
 export const getDiagnosis = async ({ authToken, params }) => {
-  const { dateOfBirth, symptoms, gender } = params
+  const { yearOfBirth, symptoms, gender } = params
   const stringifiedParams = `symptoms=[${symptoms
     .map((s) => s.value)
-    .join(',')}]&gender=${gender}&year_of_birth=${dateOfBirth}`
+    .join(',')}]&gender=${gender}&year_of_birth=${yearOfBirth}`
   const response = await fetch(
     `${API_URL}/diagnosis?token=${authToken}&language=en-gb&${stringifiedParams}`,
     {
