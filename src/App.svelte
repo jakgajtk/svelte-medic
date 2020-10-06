@@ -1,18 +1,18 @@
 <script>
-  import { Router, Route, navigate } from "svelte-routing";
-  import IconButton from "@smui/icon-button";
+  import { Router, Route, navigate } from 'svelte-routing'
+  import IconButton from '@smui/icon-button'
 
-  import HomePage from "./home/views/HomePage.svelte";
-  import DiagnosisPage from "./diagnosis/views/DiagnosisPage.svelte";
-  import IssuePage from "./issues/views/IssuePage.svelte";
-  import Footer from "./common/components/Footer.svelte";
-  import Loader from "./common/components/Loader.svelte";
-  import { authToken } from "./auth/store/store";
+  import HomePage from './home/views/HomePage.svelte'
+  import DiagnosisPage from './diagnosis/views/DiagnosisPage.svelte'
+  import IssuePage from './issues/views/IssuePage.svelte'
+  import Footer from './common/components/Footer.svelte'
+  import Loader from './common/components/Loader.svelte'
+  import { authToken } from './auth/store/store'
 
-  export let url = "";
+  export let url = ''
   const goToHome = () => {
-    navigate("/", { replace: true });
-  };
+    navigate('/', { replace: true })
+  }
 </script>
 
 <style>
@@ -21,7 +21,7 @@
     min-width: 100vw;
     display: flex;
     justify-content: center;
-    padding-top: 15px;
+    padding-top: 25px;
     margin: auto;
     position: relative;
   }
@@ -50,12 +50,6 @@
   .page-container {
     max-width: 1400px;
   }
-  .loader {
-    display: flex;
-    justify-content: center;
-    height: 80vh;
-    align-items: center;
-  }
 </style>
 
 <div class="container">
@@ -69,10 +63,8 @@
         <Route path="/diagnosis" component={DiagnosisPage} />
         <Route path="/" component={HomePage} />
       </Router>
-      {:else}
-      <div class="loader">
-        <Loader />
-      </div>
+    {:else}
+      <Loader />
     {/if}
   </div>
   <Footer />
