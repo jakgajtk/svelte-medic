@@ -34,7 +34,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    position: absolute;
+    position: fixed;
     z-index: -1;
     background-position: center;
     background-repeat: no-repeat;
@@ -49,6 +49,7 @@
   }
   .page-container {
     max-width: 1400px;
+    margin-bottom: 100px;
   }
 </style>
 

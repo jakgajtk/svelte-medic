@@ -14,8 +14,9 @@
     margin-top: 20px;
   }
   .headline {
-    margin-bottom: 110px;
+    margin-bottom: 65px;
     margin-top: 100px;
+    text-align: center
   }
 </style>
 
