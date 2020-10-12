@@ -13,7 +13,7 @@ const IssueStore = () => {
 
     getIssue: async (authToken, id) => {
       update((state) => (state = { ...state, isLoading: true }))
-      const response = await getIssueDetails({ authToken: authToken, id })
+      const response = await getIssueDetails({ authToken, id })
       update(
         (state) => (state = { ...state, issue: response, isLoading: false })
       )

@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import Select from 'svelte-select'
   import Button, { Label } from '@smui/button'
-  import Textfield, { Input } from '@smui/textfield'
+  import Textfield from '@smui/textfield'
   import Radio from '@smui/radio'
   import FormField from '@smui/form-field'
 

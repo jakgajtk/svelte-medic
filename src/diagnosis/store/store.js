@@ -15,7 +15,7 @@ const DiagnosisStore = () => {
     subscribe,
 
     getSymptoms: async (authToken) => {
-      const response = await getSymptoms({ authToken: authToken })
+      const response = await getSymptoms({ authToken })
       update((state) => (state = { ...state, symptoms: response }))
     },
 

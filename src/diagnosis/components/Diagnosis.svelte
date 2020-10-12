@@ -1,6 +1,6 @@
 <script>
   import Paper, { Title, Subtitle, Content } from '@smui/paper'
-  import Chip, { Icon, Checkmark, Text } from '@smui/chips'
+  import Chip, { Text } from '@smui/chips'
   import { navigate } from 'svelte-routing'
 
   export let issue

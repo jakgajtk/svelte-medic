@@ -7,7 +7,6 @@
   import IssuePage from './issues/views/IssuePage.svelte'
   import Footer from './common/components/Footer.svelte'
   import Loader from './common/components/Loader.svelte'
-  import { authToken } from './auth/store/store'
 
   export let url = ''
   const goToHome = () => {
