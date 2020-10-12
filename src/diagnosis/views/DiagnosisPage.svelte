@@ -13,13 +13,17 @@
   .potential-diagnosis {
     margin-top: 20px;
   }
+  .headline {
+    margin-bottom: 110px;
+    margin-top: 100px;
+  }
 </style>
 
 <svelte:head>
   <title>Pick your symptoms</title>
 </svelte:head>
 
-<div class="mdc-typography--headline3">Diagnosis</div>
+<div class="mdc-typography--headline3 headline">Diagnosis</div>
 
 {#if $DiagnosisStore.diagnosis}
   <div class="potential-diagnosis mdc-typography--body1">

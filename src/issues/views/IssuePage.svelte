@@ -22,11 +22,12 @@
     align-items: center;
     flex-direction: column;
   }
-  .title {
-    margin-bottom: 30px;
-  }
   .body {
     margin-bottom: 8px;
+  }
+  .headline {
+    margin-bottom: 110px;
+    margin-top: 100px;
   }
 </style>
 
@@ -34,7 +35,7 @@
   <title>Issue</title>
 </svelte:head>
 <div class="container">
-  <div class="mdc-typography--headline3 title">
+  <div class="mdc-typography--headline3 headline">
     {$IssueStore.issue?.Name || 'Issue'}
   </div>
   {#if $IssueStore.isLoading}

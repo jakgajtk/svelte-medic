@@ -56,6 +56,9 @@
   .field-container {
     margin-top: 50px;
     width: 560px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   :root {
     --inputPadding: 4px 10px 0px 10px;
@@ -65,10 +68,6 @@
     display: flex;
     justify-content: center;
   }
-  .radio {
-    display: flex;
-    align-items: center;
-  }
   .subtitle {
     margin-bottom: 5px;
   }
@@ -77,7 +76,7 @@
 <div class="field-container">
   <div class="subtitle mdc-typography--subtitle1">Pick your gender</div>
   {#each GENDERS as gender}
-    <FormField class="radio">
+    <FormField style="display: flex;align-items: center;width: 130px;">
       <Radio bind:group={selectedGender} value={gender.value} />
       <span slot="label">{gender.label}</span>
     </FormField>
